@@ -1288,6 +1288,6 @@ Commands:
 \---
 
 ## 📄 Licence
-[6net7]
+[6net7]  
 Ce dépôt est proposé comme un aide-mémoire pédagogique dédié à Git, GitHub et SSH.  
 Il a pour objectif de faciliter l’apprentissage, la révision et l’application des bonnes pratiques en gestion de version.
