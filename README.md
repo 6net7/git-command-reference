@@ -33,7 +33,7 @@ Il aborde également des aspects clés tels que l’utilisation du fichier .giti
 - [📥 Cloner avec une identité spécifique](#-cloner-avec-une-identité-spécifique)
 - [🔐 Git Credential Manager](#-git-credential-manager)
 - [🧠 Rappels rapides](#-rappels-rapides)
-- [📄 Licence](#licence)
+- [📄 Licence](#-licence)
 
 \---
 
@@ -53,9 +53,6 @@ Elle sert de point central pour :
 * faire relire et fusionner des changements.
 
 ### Définition simple
-
-!\[Architecture du projet](assets/img/git_and_github.png)
-
 <img src="assets/img/git_and_github.png" alt="assets/img/git_and_github.png" width="500">
 
 * **Git** = l'outil local de versioning
@@ -73,10 +70,7 @@ En résumé :
 4. Facultativement, vous **push** vers un dépôt distant pour sauvegarder ou partager.
 
 ### Schéma mental
-
-!\[Architecture du projet](assets/img/git_branching_and_merging.png)
-
-<img src="assets/img/Git\\\\\\\_vs\\\\\\\_GitHub.png" alt="assets/img/git_branching_and_merging.png" width="500">
+<img src="assets/img/git_branching_and_merging.png" alt="assets/img/git_branching_and_merging.png" width="500">
 
 `Working Directory -> Staging Area -> Local Repository -> Remote Repository`
 
@@ -143,7 +137,7 @@ git init
 > **Détails rapides :**
 > * crée un dossier caché `.git`
 > * permet de commencer à suivre les fichiers avec Git
-> 👉 Résultat : ton dossier devient un projet versionné avec Git.
+> **Résultat** : ton dossier devient un projet versionné avec Git.
 
 Pour vérifier le résultat :
 
@@ -160,7 +154,7 @@ git clone https://github.com/6net7/todo-app.git
 > Cette commande télécharge une copie complète d’un dépôt distant sur ta machine.  
 > * `git clone` → récupère le projet  
 > * URL → dépôt **todo-app** du compte ***6net7*** sur GitHub  
-> 👉 Résultat : un dossier `todo-app` est créé avec tout l’historique du projet.
+> **Résultat** : un dossier `todo-app` est créé avec tout l’historique du projet.
 
 Accède au répertoire du projet cloné et affiche son contenu :
 ```bash
@@ -186,9 +180,10 @@ echo "Hello world !" >> README2.md
 > * `cd fortest` → entre dans ce dossier  
 > * `touch README2.md` → crée un second fichier  
 > * `echo "Hello world !" >> README2.md` → ajoute du contenu dans ce fichier  
-> 💡 Bon à savoir :   
-> * >> ajoute du contenu sans effacer l'existant  
-> * > remplace complètement le contenu du fichier
+>💡 Bon à savoir :   
+> * ajoute du contenu sans effacer l'existant  
+> * remplace complètement le contenu du fichier
+
 \---
 
 ## 📊 Voir l’état du dépôt
@@ -200,7 +195,7 @@ git status
 > * montre les fichiers modifiés, ajoutés ou non suivis  
 > * indique si des changements sont prêts à être commit  
 > * précise la branche actuelle  
-> 👉 Résultat : tu sais exactement ce qui a changé dans ton projet.
+> **Résultat** : tu sais exactement ce qui a changé dans ton projet.
 
 \---
 
@@ -215,7 +210,7 @@ git remote add origin https://github.com/6net7/todo-app.git
 > * `git remote add` → enregistre un dépôt distant  
 > * `origin` → nom donné à ce dépôt (par convention, le principal)  
 > * `https://github.com/6net7/todo-app.git` → adresse du dépôt sur GitHub  
-> 👉 Résultat : ton projet local sait maintenant où envoyer (`push`) ou récupérer (`pull`) du code, comme on le verra plus tard dans ce guide.
+> **Résultat** : ton projet local sait maintenant où envoyer (`push`) ou récupérer (`pull`) du code, comme on le verra plus tard dans ce guide.
 
 Lister les branches de ton dépôt Git :
 
@@ -225,7 +220,7 @@ git branch
 > Détails rapides :  
 > * affiche toutes les branches locales  
 > * met en évidence la branche actuelle (avec `*`)  
-> 👉 Résultat : tu vois sur quelle branche tu travailles et les autres disponibles.
+> **Résultat** : tu vois sur quelle branche tu travailles et les autres disponibles.
 
 Lors de l'initialisation locale, la branche principale peut se nommer `master` au lieu de `main`.  
 Si besoin, renomme la branche principale en `main` :
@@ -236,7 +231,7 @@ git branch -M main
 > **Détails rapides :**  
 > * `-M` → force le renommage (même si `main` existe déjà)  
 > * `main` → nouveau nom de la branche  
-> 👉 Résultat : ta branche active s’appelle maintenant main.  
+> **Résultat** : ta branche active s’appelle maintenant main.  
 > **Note :**  
 > Pour définir `main` comme nom de branche principale par défaut, utilise :  
 > `git config --global init.defaultBranch main`
@@ -259,7 +254,7 @@ git add --all
 > * fichiers modifiés  
 > * nouveaux fichiers  
 > * fichiers supprimés  
-> 👉 Résultat : tout est prêt à être commit.
+> **Résultat** : tout est prêt à être commit.
 
 ### Ajouter les changements à partir du dossier courant
 Ajoute les modifications du **répertoire courant et ses sous-dossiers** à l’index.
@@ -268,19 +263,19 @@ git add .
 ```
 > * `.` → dossier courant (et ses sous-dossiers)  
 > * Inclut : fichiers ajoutés, modifiés et supprimés  
-> 👉 Résultat : les changements locaux dans ce dossier sont prêts à être commit.  
+> **Résultat** : les changements locaux dans ce dossier sont prêts à être commit.  
 > 💡 Différence avec `git add -A` : `git add .` est limité au dossier courant, alors que `-A` agit sur tout le dépôt.
 
 ### Ajouter uniquement les fichiers visibles (sans les suppressions)
 Cette commande ajoute des fichiers, mais **pas de la même façon que** `git add .`
 ```bash
-git add \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*
+git add *
 ```
 > Détails rapides :
 > * `*` est interprété par le *shell* (pas par Git)  
 > * Il correspond à ajouter les fichiers visibles (*nouveaux* et *modifiés*) du dossier courant  
 > * N’inclut pas les fichiers *supprimés* et *cachés* (comme `.env`)  
-> 👉 Résultat : seuls certains fichiers sont ajoutés, pas forcément tous.  
+> **Résultat** : seuls certains fichiers sont ajoutés, pas forcément tous.  
 > 💡 En pratique, préfère `git add .` ou `git add -A` , plus fiables.
 
 ### Ajouter un fichier précis à l’index.
@@ -295,20 +290,21 @@ git add emplacement/vers/monFichier.txt
 > Détails rapides :  
 > * `fichier.txt` → ajoute ce fichier uniquement  
 > * `emplacement/vers/monFichier.txt` → ajoute un fichier spécifique dans un dossier  
-> 👉 Résultat : seuls les fichiers ciblés sont prêts à être commit.
+> **Résultat** : seuls les fichiers ciblés sont prêts à être commit.
 
 ### Ajouter des fichiers par extension
 Cette commande ajoute **tous les fichiers** se terminant par `.py` du dossier courant uniquement.
 ```bash
-git add \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*.py
+git add *.py
 ```
 > * ne prend pas les fichiers dans les sous-dossiers, les fichiers supprimés  
 > * ignore les fichiers cachés  
-> 👉 Résultat : tous les fichiers `.py` visibles du dossier courant sont prêts à être commit.  
+> **Résultat** : tous les fichiers `.py` visibles du dossier courant sont prêts à être commit.  
 > **💡 Bonnes pratiques :**  
 > * Utilise `git status` avant/après un `git add` pour vérifier ce qui est staged  
 > * Privilégie `git add -A` pour éviter les oublis (notamment les suppressions)  
 > * Évite `git add *` si tu n’es pas sûr de son comportement dans ton environnement
+
 \---
 
 ## 💾 Enregistrer les modifications (commit)
@@ -320,7 +316,7 @@ git commit -m "Add login feature"
 > * `git commit` → enregistre les modifications dans l’historique Git  
 > * `-m` → permet d’ajouter un message descriptif  
 > * `"Add login feature"` → message décrivant le commit  
-> 👉 Résultat : les fichiers ajoutés (git add) sont sauvegardés dans l’historique du projet avec ce message.
+> **Résultat** : les fichiers ajoutés (git add) sont sauvegardés dans l’historique du projet avec ce message.
 
 \---
 
@@ -377,7 +373,7 @@ dist/
 ⚠️ Important :
 `.gitignore` n’efface pas les fichiers déjà suivis par Git, il les empêche seulement d’être ajoutés à l’avenir.
 
-Si un fichier a déjà été ajouté à Git, `.gitignore` ne suffit pas.
+Si un fichier a déjà été ajouté à Git, `.gitignore` ne suffit pas.  
 👉 Il faut le retirer du suivi :
 ```bash
 git rm --cached fichier
@@ -446,7 +442,7 @@ git restore folder/
 > * `git restore index.html` → remet `index.html` dans l’état du dernier commit  
 > * `git restore folder/` → restaure tous les fichiers du dossier `folder/`  
 > * supprime les changements **non commités**  
-> 👉 Résultat : les fichiers reviennent à leur version du dernier commit enregistrée dans Git.  
+> **Résultat** : les fichiers reviennent à leur version du dernier commit enregistrée dans Git.  
 > ❗ Attention : les modifications locales non committées sont perdues. *(action irréversible)*
 
 ### Annuler toutes les modifications dans le répertoire courant.
@@ -456,7 +452,7 @@ git restore .
 > * ` . ` → tous les fichiers du dossier actuel (et sous-dossiers)  
 > * remet les fichiers à l’état du dernier commit  
 > * ne touche pas aux fichiers non suivis (untracked)  
-> 👉 Résultat : tu récupères une version propre du projet, comme au dernier commit.  
+> **Résultat** : tu récupères une version propre du projet, comme au dernier commit.  
 > ⚠️ Attention : les changements non commités sont supprimés. *(action irréversible)*
 
 ### Retirer un fichier de la zone de staging
@@ -467,7 +463,7 @@ git restore --staged fichier.txt
 > * `--staged` → agit sur les fichiers déjà ajoutés avec `git add`  
 > * `fichier.txt` → fichier concerné  
 > * les changements restent dans ton dossier, mais ne seront pas commités  
-> 👉 Résultat : le fichier est “désajouté” du prochain commit, mais les modifications dans le fichier sont conservées.
+> **Résultat** : le fichier est “désajouté” du prochain commit, mais les modifications dans le fichier sont conservées.
 
 ### Retirer tous les fichiers de la zone de staging
 Cette commande retire **tous les fichiers du staging area** (zone d’index).
@@ -477,7 +473,7 @@ git restore --staged .
 > * `--staged` → agit sur les fichiers déjà ajoutés avec `git add`  
 > * ` . ` → tous les fichiers du répertoire courant (et sous-dossiers)  
 > * ne supprime pas les modifications locales  
-> 👉 Résultat : rien ne sera inclus dans le prochain commit, mais les modifications restent présentes dans les fichiers.
+> **Résultat** : rien ne sera inclus dans le prochain commit, mais les modifications restent présentes dans les fichiers.
 
 ### Revenir à un état non stagé (équivalent global)
 Cette commande retire juste les fichiers de la zone de staging (index), sans supprimer les modifications locales.
@@ -487,7 +483,7 @@ git reset
 > * annule l’effet de `git add`  
 > * garde les changements dans tes fichiers  
 > * par défaut agit comme `git reset HEAD`  
-> 👉 Résultat : tes fichiers restent modifiés, mais ne sont plus prêts à être commités.
+> **Résultat** : tes fichiers restent modifiés, mais ne sont plus prêts à être commités.
 
 ### Revenir au commit précèdent tout en gardant les changements
 Cette commande retire les fichiers de la zone de staging (index).
@@ -497,7 +493,7 @@ git reset HEAD
 > * `HEAD` → dernier commit actuel  
 > * annule l’effet de `git add`  
 > * conserve les modifications dans les fichiers  
-> 👉 Résultat : les fichiers ne sont plus prêts à être commités, mais ton travail n’est pas perdu.  
+> **Résultat** : les fichiers ne sont plus prêts à être commités, mais ton travail n’est pas perdu.  
 > 💡 Équivalent à `git restore --staged .` (plus explicite).
 
 📌 À retenir :
@@ -635,7 +631,7 @@ Ensuite, importer les changements de la branche `frontend` dans `main` :
 git merge frontend
 ```
 > * Fusionne l’historique des deux branches.  
->  👉 Résultat : ta branche actuelle `main` est mise à jour avec le contenu de `frontend`.  
+>  **Résultat** : ta branche actuelle `main` est mise à jour avec le contenu de `frontend`.  
 > * En cas de conflit, Git te demandera de les résoudre manuellement (Sujet abordé plus loin dans ce guide).  
 
 On peut aussi faire l'inverse. 
@@ -647,7 +643,7 @@ git merge main -m "import changes from main into frontend"
 > * `git checkout frontend` → bascule dans la branche `frontend`  
 > * `git merge main` → récupère les changements de `main`  
 > * `-m "..."` → ajoute un message de commit pour cette fusion.  
-> 👉 Résultat : ta branche actuelle `frontend` est mise à jour avec le contenu de `main`.
+> **Résultat** : ta branche actuelle `frontend` est mise à jour avec le contenu de `main`.
 
 ### Supprimer une branche locale
 ```bash
@@ -669,7 +665,7 @@ git push origin --delete nom_de_la_branche
 > * `git push` → envoie des actions vers le dépôt distant  
 > * `origin` → nom du dépôt distant  
 > * `--delete nom_de_la_branche` → demande la suppression de cette branche à distance  
-> 👉 Résultat : la branche est supprimée du serveur (ex : sur GitHub).
+> **Résultat** : la branche est supprimée du serveur (ex : sur GitHub).
 
 \---
 
@@ -833,8 +829,8 @@ Liste toute la configuration Git actuelle.
 git config --list
 ```
 > * affiche global + local + système  
-> * utile pour vérifier ce qui est actif
-👉 Résultat : tu vois exactement quelle configuration Git est utilisée.
+> * utile pour vérifier ce qui est actif  
+>**Résultat** : tu vois exactement quelle configuration Git est utilisée.
 
 \---
 
@@ -854,7 +850,7 @@ git push -u origin main
 > * `origin` → dépôt distant  
 > * `main` → branche envoyée  
 > * `-u` (`--set-upstream`) → associe ta branche locale à la branche distante  
-> 👉 Résultat : la branche `main` est publiée (ex : sur GitHub) et tu pourras ensuite faire simplement `git push` / `git pull` sans préciser *`origin`* ou le *nom de la branche* ou `-u`.
+>**Résultat** : la branche `main` est publiée (ex : sur GitHub) et tu pourras ensuite faire simplement `git push` / `git pull` sans préciser *`origin`* ou le *nom de la branche* ou `-u`.
 
 Basculer sur ****une autre branche**** pour l'envoyer aussi au dépôt distant.
 ```bash
@@ -889,8 +885,8 @@ git merge origin/main
 ```bash
 git pull
 ```
-> `git pull` équivaut à : `git fetch` + `git merge`  
-> Plus rapide, mais moins de contrôle.
+> → `git pull` équivaut à : `git fetch` + `git merge`  
+> → Plus rapide, mais moins de contrôle.
 
 ### Vérifier les branches (locales + distantes)
 ```bash
@@ -1009,10 +1005,10 @@ Dans l’onglet **Pull Requests** :
 - **compare** → `feature` (ton travail)
 
 ### 🧠 En clair
-Une PR, c’est :
-👉 une demande de fusion  
-👉 + une revue de code  
-👉 + un point de contrôle avant intégration 
+Une PR, c’est :  
+➡️ une demande de fusion  
+➡️ + une revue de code  
+➡️ + un point de contrôle avant intégration 
 
 💡 **TL;DR**
 - branche = ton espace de travail  
@@ -1040,10 +1036,10 @@ ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "clé GitHub travail mon
 > * `-C "serveur-production"` → sert juste de commentaire (pour identifier la clé)  
 > * `-o` → utilise un **format de clé privé moderne** (plus sécurisé)  
 > * `-a 100` → niveau de protection de la clé (plus c'est plus fort, plus c'est long à taper). Rend les attaques par brute-force plus difficiles.  
-> 👉 Résultat : une paire de clés (publique + privée) pour t’authentifier, par exemple sur GitHub sans mot de passe.
+> **Résultat** : une paire de clés (publique + privée) pour t’authentifier, par exemple sur GitHub sans mot de passe.
 
-### Copier la clé publique 
-Utilise la commande suivante pour afficher le contenu de la clé publique.
+### Copier la clé publique  
+Utilise la commande suivante pour afficher le contenu de la clé publique.  
 Linux / Windows (Git Bash / PowerShell) :
 ```bash
 cat ~/.ssh/id_ed25519.pub
@@ -1062,15 +1058,15 @@ cat ~/.ssh/id_ed25519.pub
 6. Clique **Add SSH key**
 
 ### Configurer l'agent SSH pour éviter de retaper la passphrase tout le temps
-Mettre une passphrase protège ta clé privée mais tu dois la saisir… 
+Mettre une passphrase protège ta clé privée mais tu dois la saisir…   
 sauf si tu utilises un agent SSH (`ssh-agent`) qui la mémorise.
 
-💡 L’objectif de `ssh-agent` n’est pas la persistance, mais d’éviter de retaper la passphrase pendant que le PC est allumé.
+💡 L’objectif de `ssh-agent` n’est pas la persistance, mais d’éviter de retaper la passphrase pendant que le PC est allumé.  
   ✔️ L’agent peut démarrer automatiquement (si configuré)  
   ❌ Mais il ne garde jamais les clés après redémarrage  
   🔐 Tu devras réentrer la passphrase une fois par session
 
-#### 🐧 Configurer l'agent SSH sur Linux 
+### 🐧 Configurer l'agent SSH sur Linux 
 
 1. Démarrer l’agent
 ```bash
@@ -1097,7 +1093,7 @@ Voir les clés actives dans **ssh-agent** :
 ssh-add -l
 ```
 
-#### 🪟 Configurer l'agent SSH sur Windows
+### 🪟 Configurer l'agent SSH sur Windows
 ✔️ Méthode PowerShell (en tant qu'admin)
 
 1. Activer le service
@@ -1223,17 +1219,17 @@ rm ~/.ssh/*
 \---
 
 ## 📥 Cloner avec une identité spécifique
-Lorsque tu clones un dépôt Git distant sur ta machine, tu peux inclure ton identité pour dire à Git et Git Credential Manager de l'utiliser pour l'authentification.
+Lorsque tu clones un dépôt Git distant sur ta machine,  
+tu peux inclure ton identité pour dire à Git et Git Credential Manager de l'utiliser pour l'authentification.
 
-Pour cela, utiliser :
-
+Pour cela, utiliser :  
 ```bash
 git clone https://contrib123@github.com/6net7/todo-app.git
 ```
-> `git clone` → télécharge un dépôt
-> `https://contrib123@github.com/...` → utilise l’utilisateur **contrib123** pour l’authentification
-> `6net7/todo-app.git` → dépôt ciblé (projet **todo-app** du compte **6net7** sur GitHub)
-> 👉 Résultat : tu obtiens une copie locale complète du projet (s'il n'est pas vide).
+> `git clone` → télécharge un dépôt  
+> `https://contrib123@github.com/...` → utilise l’utilisateur **contrib123** pour l’authentification  
+> `6net7/todo-app.git` → dépôt ciblé (projet **todo-app** du compte **6net7** sur GitHub)  
+> **Résultat** : tu obtiens une copie locale complète du projet (s'il n'est pas vide).  
 
 Si le dépôt a déjà été cloné avec la commande :
 
