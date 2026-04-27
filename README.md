@@ -896,7 +896,7 @@ git branch -a
 > * Inclut les branches distantes (`remotes/origin/...`)
 
 ### Tout pousser d’un coup
-Cette commande pousse toutes les branches locales vers le remote.
+Cette commande pousse toutes les branches locales vers le remote.  
 ⚠️ à utiliser avec précaution (tu peux envoyer des branches inutiles).
 ```bash
 git push --all
