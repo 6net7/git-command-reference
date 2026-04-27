@@ -134,9 +134,9 @@ Cette commande initialise un dépôt Git dans le répertoire courant.
 ```bash
 git init
 ```
-> **Détails rapides :**
-> * crée un dossier caché `.git`
-> * permet de commencer à suivre les fichiers avec Git
+> **Détails rapides :**  
+> * crée un dossier caché `.git`  
+> * permet de commencer à suivre les fichiers avec Git  
 > **Résultat** : ton dossier devient un projet versionné avec Git.
 
 Pour vérifier le résultat :
