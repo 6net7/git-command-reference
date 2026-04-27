@@ -33,7 +33,7 @@ Il aborde également des aspects clés tels que l’utilisation du fichier .giti
 - [📥 Cloner avec une identité spécifique](#-cloner-avec-une-identité-spécifique)
 - [🔐 Git Credential Manager](#-git-credential-manager)
 - [🧠 Rappels rapides](#-rappels-rapides)
-- [📄 Licence](#-licence)
+
 
 \---
 
